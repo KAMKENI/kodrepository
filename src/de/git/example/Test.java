@@ -5,5 +5,5 @@ public class Test {
 
 		System.out.println("Hello mein test 15");
 
-	}
+}
 }
