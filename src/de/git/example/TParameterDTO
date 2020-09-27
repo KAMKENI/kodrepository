@@ -1,0 +1,340 @@
+package de.kod.wr.model;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public class TParameterDTO {
+
+	public static final String F_INDEX = "F_INDEX";
+	public static final String F_LAST_MODIFIED = "F_LAST_MODIFIED";
+	public static final String F_COMPANY_INDEX = "F_COMPANY_INDEX";
+	public static final String F_APPLICANT_INDEX = "F_APPLICANT_INDEX";
+	public static final String F_ATTRIBUTE_INDEX = "F_ATTRIBUTE_INDEX";
+	public static final String F_RELEASE_STATUS_INDEX = "F_RELEASE_STATUS_INDEX";
+
+	public static final String F_PARAMETER_INDEX = "F_PARAMETER_INDEX";
+	public static final String F_PARAMETER_ID = "F_PARAMETER_ID";
+	public static final String F_PARAMETER_TYPE_INDEX = "F_PARAMETER_TYPE_INDEX";
+	public static final String F_PARAMETER_SELECTION_INDEX = "F_PARAMETER_SELECTION_INDEX";
+	
+	public static final String F_GROUP2_INDEX = "F_GROUP2_INDEX";
+	public static final String F_GROUP2_ID = "F_GROUP2_ID";
+	public static final String F_GROUP2_KIND = "F_GROUP2_KIND";
+	public static final String F_GROUP2_MASTER_INDEX = "F_GROUP2_MASTER_INDEX";
+	public static final String F_RULE_GROUP_INDEX = "F_RULE_GROUP_INDEX";
+	
+	public static final String F_GROUP1_INDEX = "F_GROUP1_INDEX";
+	public static final String F_GROUP1_ID = "F_GROUP1_ID";
+	
+	public static final String F_MAINGROUP_INDEX = "F_MAINGROUP_INDEX";
+	public static final String F_MAINGROUP_ID = "F_MAINGROUP_ID";
+	
+	public static final String F_PARAMETER_GROUP_INDEX = "F_PARAMETER_GROUP_INDEX";
+	public static final String F_PARAMETER_PARAMETER_GROUP_INDEX = "F_PARAMETER_PARAMETER_GROUP_INDEX";
+
+	private Integer fIndex;
+	private String fLastModified;
+	private Integer fCompanyIndex;
+	private Integer fApplicatIndex;
+	private Integer fAttributeIndex;
+	private Integer fReleaseStatusIndex;
+	private Integer fParameterIndex;
+	private Integer fParameterId;
+	private Integer fParameterTypeIndex;
+	private Integer fParameterSelectionIndex;
+
+	private Integer fGroup2Index;
+	private Integer fGroup2Id;
+	private String fGroup2Kind;
+	private Integer tGroup2MasterIndex;
+	private Integer tRuleGroupIndex;
+
+	private Integer fGroup1Index;
+	private Integer fGroup1Id;
+
+	private Integer tMainGroupIndex;
+	private Integer tMainGroupId;
+	
+	private Integer fParameterGroupIndex;
+	private Integer fParameterParameterGroupIndex;
+
+	private List<TTextDTO> fTextList = new ArrayList<>();
+
+	public TParameterDTO() {
+	}
+
+	public TParameterDTO(Object[] tuples, Map<String, Integer> aliasToIndexMap) {
+
+		if (aliasToIndexMap.containsKey(F_INDEX))
+			this.fIndex = intValue(tuples[aliasToIndexMap.get(F_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_LAST_MODIFIED))
+			this.fLastModified = stringValue(tuples[aliasToIndexMap.get(F_LAST_MODIFIED)]);
+		if (aliasToIndexMap.containsKey(F_COMPANY_INDEX))
+			this.fCompanyIndex = intValue(tuples[aliasToIndexMap.get(F_COMPANY_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_APPLICANT_INDEX))
+			this.fApplicatIndex = intValue(tuples[aliasToIndexMap.get(F_APPLICANT_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_ATTRIBUTE_INDEX))
+			this.fAttributeIndex = intValue(tuples[aliasToIndexMap.get(F_ATTRIBUTE_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_RELEASE_STATUS_INDEX))
+			this.fReleaseStatusIndex = intValue(tuples[aliasToIndexMap.get(F_RELEASE_STATUS_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_PARAMETER_INDEX))
+			this.fParameterIndex = intValue(tuples[aliasToIndexMap.get(F_PARAMETER_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_PARAMETER_ID))
+			this.fParameterId = intValue(tuples[aliasToIndexMap.get(F_PARAMETER_ID)]);
+		if (aliasToIndexMap.containsKey(F_PARAMETER_TYPE_INDEX))
+			this.fParameterTypeIndex = intValue(tuples[aliasToIndexMap.get(F_PARAMETER_TYPE_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_PARAMETER_SELECTION_INDEX))
+			this.fParameterSelectionIndex = intValue(tuples[aliasToIndexMap.get(F_PARAMETER_SELECTION_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_GROUP2_INDEX))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_GROUP2_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_GROUP2_ID))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_GROUP2_ID)]);
+		if (aliasToIndexMap.containsKey(F_GROUP1_INDEX))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_GROUP1_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_GROUP1_ID))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_GROUP1_ID)]);
+		if (aliasToIndexMap.containsKey(F_MAINGROUP_INDEX))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_MAINGROUP_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_MAINGROUP_ID))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_MAINGROUP_ID)]);
+		if (aliasToIndexMap.containsKey(F_PARAMETER_GROUP_INDEX))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_PARAMETER_GROUP_INDEX)]);
+		if (aliasToIndexMap.containsKey(F_PARAMETER_PARAMETER_GROUP_INDEX))
+			this.fGroup2Index = intValue(tuples[aliasToIndexMap.get(F_PARAMETER_PARAMETER_GROUP_INDEX)]);
+	}
+
+	public Integer getFParameterId() {
+		return fParameterId;
+	}
+
+	public void setFParameterId(Integer fTParameterId) {
+		this.fParameterId = fTParameterId;
+	}
+
+	public Integer getFParameterTypeIndex() {
+		return fParameterTypeIndex;
+	}
+
+	public void setFParameterType(Integer tParameterType) {
+		this.fParameterTypeIndex = tParameterType;
+	}
+
+	public Integer getFParameterIndex() {
+		return fParameterIndex;
+	}
+
+	public void setFParameterIndex(Integer fIndex) {
+		this.fParameterIndex = fIndex;
+	}
+
+	public Integer getFGroup2Index() {
+		return fGroup2Index;
+	}
+
+	public void setFGroup2Index(Integer fGroup2Index) {
+		this.fGroup2Index = fGroup2Index;
+	}
+
+	public Integer getFParameterSelection() {
+		return fParameterSelectionIndex;
+	}
+
+	public void setFParameterSelection(Integer tParameterSelection) {
+		this.fParameterSelectionIndex = tParameterSelection;
+	}
+
+	public List<TTextDTO> getfTextList() {
+		return fTextList;
+	}
+
+	public void setfTextList(List<TTextDTO> fTextList) {
+		this.fTextList = fTextList;
+	}
+
+	public Integer getfIndex() {
+		return fIndex;
+	}
+
+	public void setfIndex(Integer fIndex) {
+		this.fIndex = fIndex;
+	}
+
+	public String getfLastModified() {
+		return fLastModified;
+	}
+
+	public void setfLastModified(String fLastModified) {
+		this.fLastModified = fLastModified;
+	}
+
+	public Integer getfCompanyIndex() {
+		return fCompanyIndex;
+	}
+
+	public void setfCompanyIndex(Integer fCompanyIndex) {
+		this.fCompanyIndex = fCompanyIndex;
+	}
+
+	public Integer getfApplicatIndex() {
+		return fApplicatIndex;
+	}
+
+	public void setfApplicatIndex(Integer fApplicatIndex) {
+		this.fApplicatIndex = fApplicatIndex;
+	}
+
+	public Integer getfAttributeIndex() {
+		return fAttributeIndex;
+	}
+
+	public void setfAttributeIndex(Integer fAttributeIndex) {
+		this.fAttributeIndex = fAttributeIndex;
+	}
+
+	public Integer getfReleaseStatusIndex() {
+		return fReleaseStatusIndex;
+	}
+
+	public void setfReleaseStatusIndex(Integer fReleaseStatusIndex) {
+		this.fReleaseStatusIndex = fReleaseStatusIndex;
+	}
+
+	public Integer getfParameterIndex() {
+		return fParameterIndex;
+	}
+
+	public void setfParameterIndex(Integer fParameterIndex) {
+		this.fParameterIndex = fParameterIndex;
+	}
+
+	public Integer getfParameterId() {
+		return fParameterId;
+	}
+
+	public void setfParameterId(Integer fParameterId) {
+		this.fParameterId = fParameterId;
+	}
+
+	public Integer getfParameterTypeIndex() {
+		return fParameterTypeIndex;
+	}
+
+	public void setfParameterTypeIndex(Integer fParameterTypeIndex) {
+		this.fParameterTypeIndex = fParameterTypeIndex;
+	}
+
+	public Integer getfParameterSelectionIndex() {
+		return fParameterSelectionIndex;
+	}
+
+	public void setfParameterSelectionIndex(Integer fParameterSelectionIndex) {
+		this.fParameterSelectionIndex = fParameterSelectionIndex;
+	}
+
+	public Integer getfGroup2Index() {
+		return fGroup2Index;
+	}
+
+	public void setfGroup2Index(Integer fGroup2Index) {
+		this.fGroup2Index = fGroup2Index;
+	}
+
+	private Integer intValue(Object object) {
+		if (Integer.class.isInstance(object)) {
+			return Integer.class.cast(object);
+		}
+		return null;
+	}
+
+	private String stringValue(Object object) {
+		if (Timestamp.class.isInstance(object)) {
+			return Timestamp.class.cast(object).toString();
+		} else if (String.class.isInstance(object)) {
+			return String.class.cast(object);
+		}
+		return null;
+	}
+
+	public Integer getfGroup2Id() {
+		return fGroup2Id;
+	}
+
+	public void setfGroup2Id(Integer fGroup2Id) {
+		this.fGroup2Id = fGroup2Id;
+	}
+
+	public String getfGroup2Kind() {
+		return fGroup2Kind;
+	}
+
+	public void setfGroup2Kind(String fGroup2Kind) {
+		this.fGroup2Kind = fGroup2Kind;
+	}
+
+	public Integer gettGroup2MasterIndex() {
+		return tGroup2MasterIndex;
+	}
+
+	public void settGroup2MasterIndex(Integer tGroup2MasterIndex) {
+		this.tGroup2MasterIndex = tGroup2MasterIndex;
+	}
+
+	public Integer gettRuleGroupIndex() {
+		return tRuleGroupIndex;
+	}
+
+	public void settRuleGroupIndex(Integer tRuleGroupIndex) {
+		this.tRuleGroupIndex = tRuleGroupIndex;
+	}
+
+	public Integer getfGroup1Index() {
+		return fGroup1Index;
+	}
+
+	public void setfGroup1Index(Integer fGroup1Index) {
+		this.fGroup1Index = fGroup1Index;
+	}
+
+	public Integer getfGroup1Id() {
+		return fGroup1Id;
+	}
+
+	public void setfGroup1Id(Integer fGroup1Id) {
+		this.fGroup1Id = fGroup1Id;
+	}
+
+	public Integer gettMainGroupIndex() {
+		return tMainGroupIndex;
+	}
+
+	public void settMainGroupIndex(Integer tMainGroupIndex) {
+		this.tMainGroupIndex = tMainGroupIndex;
+	}
+
+	public Integer gettMainGroupId() {
+		return tMainGroupId;
+	}
+
+	public void settMainGroupId(Integer tMainGroupId) {
+		this.tMainGroupId = tMainGroupId;
+	}
+
+	public Integer getfParameterGroupIndex() {
+		return fParameterGroupIndex;
+	}
+
+	public void setfParameterGroupIndex(Integer fParameterGroupIndex) {
+		this.fParameterGroupIndex = fParameterGroupIndex;
+	}
+
+	public Integer getfParameterParameterGroupIndex() {
+		return fParameterParameterGroupIndex;
+	}
+
+	public void setfParameterParameterGroupIndex(Integer fParameterParameterGroupIndex) {
+		this.fParameterParameterGroupIndex = fParameterParameterGroupIndex;
+	}
+
+}
