@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.hibernate.transform.ResultTransformer;
 
-public class TBridgeTextDTOResultTransformer implements ResultTransformer {
+public class DTOParameterDTOResultTransformer implements ResultTransformer {
 
 	/**
 	 * 
