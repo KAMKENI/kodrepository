@@ -1,0 +1,66 @@
+package de.kod.wr.model;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.transform.ResultTransformer;
+
+public class TBridgeTextDTOResultTransformer implements ResultTransformer {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Map<Integer, TParameterDTO> parameterDTOMap = new LinkedHashMap<>();
+
+	@Override
+	public Object transformTuple(Object[] tuple, String[] aliases) {
+
+		Map<String, Integer> aliasToIndexMap = aliasToIndexMap(aliases);
+
+		Integer parameterID = intValue(tuple[aliasToIndexMap.get(TParameterDTO.F_INDEX)]);
+
+		TParameterDTO parameterDTO = parameterDTOMap.computeIfAbsent(parameterID, id -> new TParameterDTO(tuple, aliasToIndexMap));
+
+		parameterDTO.getfTextList().add(new TTextDTO(tuple, aliasToIndexMap));
+
+		return parameterDTO;
+	}
+
+	@Override
+	public List<TParameterDTO> transformList(List collection) {
+		return new ArrayList<>(parameterDTOMap.values());
+	}
+
+	public Map<String, Integer> aliasToIndexMap(String[] aliases) {
+
+		Map<String, Integer> aliasToIndexMap = new LinkedHashMap<>();
+
+		for (int i = 0; i < aliases.length; i++) {
+			aliasToIndexMap.put(aliases[i], i);
+		}
+
+		return aliasToIndexMap;
+	}
+
+	private String stringValue(Object object) {
+		return (String) object;
+	}
+
+	private Integer intValue(Object object) {
+		if (Integer.class.isInstance(object)) {
+			return Integer.class.cast(object);
+		}
+		return null;
+	}
+	
+	private Long longValue(Object object) {
+		if (Long.class.isInstance(object)) {
+			return Long.class.cast(object);
+		}
+		return null;
+	}
+}
