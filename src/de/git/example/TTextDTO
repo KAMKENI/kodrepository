@@ -1,0 +1,84 @@
+package de.kod.wr.model;
+
+import java.io.Serializable;
+import java.util.Map;
+
+public class TTextDTO implements Serializable{
+
+	private static final long serialVersionUID = -5552712420341477258L;
+	 public static final String F_TEXT_INDEX = "F_TEXT_INDEX";
+	 public static final String F_TEXT = "F_TEXT";
+	 public static final String F_LANGUAGE = "F_LANGUAGE";
+	 public static final String F_FORMAT = "F_FORMAT";
+	 public static final String F_BRIDGE_TEXT_INDEX = "F_BRIDGE_TEXT_INDEX";
+
+	private Integer fTextIndex;
+	private String fText;
+	private Integer fLanguageIndex;
+	private Integer fFormatIndex;
+	private Integer fBridgeTextIndex;
+
+	public TTextDTO() {
+	}
+
+	public TTextDTO( Object[] tuples,Map<String, Integer> aliasToIndexMap) {
+        this.fTextIndex = intValue(tuples[aliasToIndexMap.get(F_TEXT_INDEX)]);
+        this.fText = stringValue(tuples[aliasToIndexMap.get(F_TEXT)]);
+        this.fLanguageIndex = intValue(tuples[aliasToIndexMap.get(F_LANGUAGE)]);
+        this.fFormatIndex = intValue(tuples[aliasToIndexMap.get(F_FORMAT)]);
+        this.fBridgeTextIndex = intValue(tuples[aliasToIndexMap.get(F_BRIDGE_TEXT_INDEX)]);
+	}
+
+	public Integer getFTextIndex() {
+		return fTextIndex;
+	}
+
+	public void setFTextIndex(Integer fIndex) {
+		this.fTextIndex = fIndex;
+	}
+
+	public Integer getFFormatIndex() {
+		return fFormatIndex;
+	}
+
+	public void setFFormatIndex(Integer fFormatIndex) {
+		this.fFormatIndex = fFormatIndex;
+	}
+
+	public Integer getFLanguageIndex() {
+		return fLanguageIndex;
+	}
+
+	public void setFLanguageIndex(Integer tLanguage) {
+		this.fLanguageIndex = tLanguage;
+	}
+
+
+	public String getFText() {
+		return this.fText;
+	}
+	
+	public void setFText(String text) {
+		this.fText = text;
+	}
+
+	public Integer getFBridgeTextIndex() {
+		return fBridgeTextIndex;
+	}
+
+	public void setFBridgeTextIndex(Integer fBridgeTextIndex) {
+		this.fBridgeTextIndex = fBridgeTextIndex;
+	}
+	
+	private Integer intValue(Object object) {
+		if (Integer.class.isInstance(object)) {
+			return Integer.class.cast(object);
+		}
+		return null;
+	}
+	
+	private String stringValue(Object object) {
+		return (String) object;
+	}
+
+}
