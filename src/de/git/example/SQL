@@ -12,3 +12,4 @@
 				.unwrap(org.hibernate.query.Query.class).setResultTransformer(new ParameterDTOResultTransformer());
 		return query.getResultList();
 https://www.sisense.com/blog/8-ways-fine-tune-sql-queries-production-databases/
+https://use-the-index-luke.com/de/sql/where/bereiche/like-filter
