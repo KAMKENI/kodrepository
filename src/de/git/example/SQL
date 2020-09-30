@@ -11,3 +11,4 @@
 								+ "INNER JOIN T_GROUP2 G2 ON G2.F_INDEX=P.F_GROUP2_INDEX")
 				.unwrap(org.hibernate.query.Query.class).setResultTransformer(new ParameterDTOResultTransformer());
 		return query.getResultList();
+https://www.sisense.com/blog/8-ways-fine-tune-sql-queries-production-databases/
